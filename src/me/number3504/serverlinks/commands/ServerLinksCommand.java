@@ -19,11 +19,11 @@ public class ServerLinksCommand extends CommandExecutor {
 		if (label.equalsIgnoreCase("serverlinks")) {
 			if (args.length == 0) {
 				sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-						"&7Server running&3 " + main.getDescription().getName()));
+						"&7Server running&3 ServerLinks"));
 				sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
 						"&7Plugin version&3 " + main.getDescription().getVersion()));
 				sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-						"&7Plugin made by&3 " + main.getDescription().getAuthors()));
+						"&7Plugin made by&3 Number3504"));
 				sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
 						"&7If you like my plugin, consider leaving a &3review&7 on the SpigotMC page to help me out!"));
 				sender.sendMessage(
