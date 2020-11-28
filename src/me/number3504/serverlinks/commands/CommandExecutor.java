@@ -1,10 +1,14 @@
 package me.number3504.serverlinks.commands;
 
-public class CommandExecutor {
+import org.bukkit.command.CommandSender;
+
+public abstract class CommandExecutor {
 	
 	private String command;
 	private String permission;
 	private int length;
+	
+	public abstract void execute(CommandSender sender, String[] args);
 	
 	public String getCommand() {
 		return command;
