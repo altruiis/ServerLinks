@@ -49,26 +49,16 @@ public class ServerLinksMain extends JavaPlugin {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		String noPermission = "noPermission";
-		String prefix = "prefix";
-		String invalidCmd = "invalidCommand";
-		String configReloaded = "configReloaded";
-		String linkSet = "linkSet";
-		String linkReset = "linkReset";
-		String specifyLink = "specifyLink";
-		String specifyMessage = "specifyMessage";
-		String allReset = "allReset";
-		String noLinkSet = "noLinkSet";
-		this.config.addDefault(linkSet, "&aYou set the&7 %link% &ato: ");
-		this.config.addDefault(noPermission, "&cYou do not have the&4 %permission% &cpermission!");
-		this.config.addDefault(prefix, "&7[&3ServerLinks&7] &r");
-		this.config.addDefault(invalidCmd, "&cUnknown command. Do /sl help for commands.");
-		this.config.addDefault(configReloaded, "&aConfiguration reloaded successfully!");
-		this.config.addDefault(linkReset, "&aYou reset the&7 %link%&a.");
-		this.config.addDefault(specifyMessage, "&cPlease specify a message.");
-		this.config.addDefault(specifyLink, "&cPlease specify a link.");
-		this.config.addDefault(allReset, "&aYou reset every link.");
-		this.config.addDefault(noLinkSet, "&cNo link has been set. Please contact an administrator.");
+		this.config.addDefault("linkSet", "&aYou set the&7 %link% &ato: ");
+		this.config.addDefault("noPermission", "&cYou do not have the&4 %permission% &cpermission!");
+		this.config.addDefault("prefix", "&7[&3ServerLinks&7] &r");
+		this.config.addDefault("invalidCmd", "&cUnknown command. Do /sl help for commands.");
+		this.config.addDefault("configReloaded", "&aConfiguration reloaded successfully!");
+		this.config.addDefault("linkReset", "&aYou reset the&7 %link%&a.");
+		this.config.addDefault("specifyMessage", "&cPlease specify a message.");
+		this.config.addDefault("specifyLink", "&cPlease specify a link.");
+		this.config.addDefault("allReset", "&aYou reset every link.");
+		this.config.addDefault("noLinkSet", "&cNo link has been set. Please contact an administrator.");
 		this.config.options().copyDefaults(true);
 		try {
 			this.config.save(this.f);
@@ -78,24 +68,15 @@ public class ServerLinksMain extends JavaPlugin {
 	}
 
 	public void loadConfiguration() {
-		String forumappeals = "links.appeals";
-		String pathtwitter = "links.twitter";
-		String pathfacebook = "links.facebook";
-		String pathdiscord = "links.discord";
-		String pathyoutube = "links.youtube";
-		String pathforum = "links.forum";
-		String pathinstagram = "links.instagram";
-		String forumreports = "links.reports";
-		String pathstore = "links.webstore";
-		getConfig().addDefault(forumappeals, "");
-		getConfig().addDefault(pathtwitter, "");
-		getConfig().addDefault(pathfacebook, "");
-		getConfig().addDefault(pathdiscord, "");
-		getConfig().addDefault(pathyoutube, "");
-		getConfig().addDefault(pathforum, "");
-		getConfig().addDefault(pathinstagram, "");
-		getConfig().addDefault(forumreports, "");
-		getConfig().addDefault(pathstore, "");
+		getConfig().addDefault("links.appeals", "");
+		getConfig().addDefault("links.twitter", "");
+		getConfig().addDefault("links.facebook", "");
+		getConfig().addDefault("links.discord", "");
+		getConfig().addDefault("links.youtube", "");
+		getConfig().addDefault("links.forum", "");
+		getConfig().addDefault("links.instagram", "");
+		getConfig().addDefault("links.reports", "");
+		getConfig().addDefault("links.webstore", "");
 		getConfig().options().copyDefaults(true);
 		saveConfig();
 	}
