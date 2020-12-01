@@ -3,6 +3,7 @@ package me.number3504.serverlinks;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -11,10 +12,17 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import me.number3504.serverlinks.commands.CommandHandler;
+
 public class ServerLinksMain extends JavaPlugin {
+
+	public static JavaPlugin main;
+
 	public void onEnable() {
-		loadMessages();
+		main = this;
+		getCommand("serverlinks").setExecutor(new CommandHandler());
 		loadConfiguration();
+		loadMessages();
 		System.out.print(ChatColor.translateAlternateColorCodes('&',
 				String.valueOf(this.config.getString("prefix")) + "&aServerLinks successfully enabled"));
 	}
@@ -42,29 +50,16 @@ public class ServerLinksMain extends JavaPlugin {
 	public FileConfiguration config = (FileConfiguration) YamlConfiguration.loadConfiguration(this.f);
 
 	public void loadMessages() {
-		File f = new File(getDataFolder() + File.separator + "messages.yml");
-		if (!f.exists())
-			try {
-				f.createNewFile();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		this.config.addDefault("linkSet", "&aYou set the&7 %link% &ato: ");
-		this.config.addDefault("noPermission", "&cYou do not have the&4 %permission% &cpermission!");
-		this.config.addDefault("prefix", "&7[&3ServerLinks&7] &r");
-		this.config.addDefault("invalidCmd", "&cUnknown command. Do /sl help for commands.");
-		this.config.addDefault("configReloaded", "&aConfiguration reloaded successfully!");
-		this.config.addDefault("linkReset", "&aYou reset the&7 %link%&a.");
-		this.config.addDefault("specifyMessage", "&cPlease specify a message.");
-		this.config.addDefault("specifyLink", "&cPlease specify a link.");
-		this.config.addDefault("allReset", "&aYou reset every link.");
-		this.config.addDefault("noLinkSet", "&cNo link has been set. Please contact an administrator.");
-		this.config.options().copyDefaults(true);
-		try {
-			this.config.save(this.f);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		getConfig().addDefault("messages.linkSet", "&aYou set the&7 %link% &ato: ");
+		getConfig().addDefault("messages.noPermission", "&cYou do not have the&4 %permission% &cpermission!");
+		getConfig().addDefault("messages.prefix", "&7[&3ServerLinks&7] &r");
+		getConfig().addDefault("messages.invalidCmd", "&cUnknown command. Do /sl help for commands.");
+		getConfig().addDefault("messages.configReloaded", "&aConfiguration reloaded successfully!");
+		getConfig().addDefault("messages.linkReset", "&aYou reset the&7 %link%&a.");
+		getConfig().addDefault("messages.specifyMessage", "&cPlease specify a message.");
+		getConfig().addDefault("messages.specifyLink", "&cPlease specify a link.");
+		getConfig().addDefault("messages.allReset", "&aYou reset all links.");
+		getConfig().addDefault("messages.noLinkSet", "&cNo link has been set. Please contact an administrator.");
 	}
 
 	public void loadConfiguration() {
@@ -604,4 +599,5 @@ public class ServerLinksMain extends JavaPlugin {
 			}
 		return true;
 	}
+
 }

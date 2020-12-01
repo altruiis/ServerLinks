@@ -1,0 +1,22 @@
+links:
+  appeals: ''
+  twitter: ''
+  facebook: ''
+  discord: ''
+  youtube: ''
+  forum: ''
+  instagram: ''
+  reports: ''
+  webstore: ''
+
+messages:
+  linkSet: '&aYou set the&7 %link% &ato: '
+  noPermission: '&cYou do not have the&4 %permission% &cpermission!'
+  prefix: '&7[&3ServerLinks&7] &r'
+  invalidCmd: '&cUnknown command. Do /sl help for commands.'
+  configReloaded: '&aConfiguration reloaded successfully!'
+  linkReset: '&aYou reset the&7 %link%&a.'
+  specifyMessage: '&cPlease specify a message.'
+  specifyLink: '&cPlease specify a link.'
+  allReset: '&aYou reset every link.'
+  noLinkSet: '&cNo link has been set. Please contact an administrator.'

@@ -1,0 +1,26 @@
+main: me.number3504.serverlinks.ServerLinksMain
+name: ServerLinks
+version: 3.0
+api-version: 1.16
+author: Number3504
+description: Plugin to set media links such as discord for your users
+
+commands:
+  serverlinks:
+    description: ServerLinks main command
+    usage: /<command> <args>
+    aliases: sl
+
+permissions:
+  links.*:
+    default: op
+    children:
+      links.set: true
+      links.reset: true
+      links.reload: true
+  links.set:
+    default: op
+  links.reset:
+    default: op
+  links.reload:
+    default: op

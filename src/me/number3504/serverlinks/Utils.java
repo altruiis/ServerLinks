@@ -8,9 +8,9 @@ import org.bukkit.Bukkit;
 import net.md_5.bungee.api.ChatColor;
 
 public class Utils {
-	
+
 	private final static Pattern pattern = Pattern.compile("#[a-fA-f0-9]{6}");
-	
+
 	public static String msg(String s) {
 		if (Bukkit.getVersion().contains("1.16")) {
 			Matcher match = pattern.matcher(s);
