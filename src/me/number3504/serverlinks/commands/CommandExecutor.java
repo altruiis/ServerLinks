@@ -7,7 +7,6 @@ public abstract class CommandExecutor {
 	private String command;
 	private String permission;
 	private int length;
-	private boolean optional;
 
 	public abstract void execute(CommandSender sender, String[] args);
 
@@ -33,14 +32,6 @@ public abstract class CommandExecutor {
 
 	public void setLength(int length) {
 		this.length = length;
-	}
-
-	public boolean isOptional() {
-		return optional;
-	}
-
-	public void setOptional(boolean optional) {
-		this.optional = optional;
 	}
 
 }
