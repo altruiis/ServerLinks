@@ -16,6 +16,7 @@ public class CommandHandler implements org.bukkit.command.CommandExecutor {
 	public CommandHandler() {
 		commands.put("info", new InfoCommand());
 		commands.put("help", new HelpCommand());
+		commands.put("reload", new ReloadCommand());
 	}
 
 	JavaPlugin main = ServerLinksMain.main;
@@ -37,7 +38,7 @@ public class CommandHandler implements org.bukkit.command.CommandExecutor {
 					final CommandExecutor command = commands.get(name);
 
 					if (command.getPermission() != null && !sender.hasPermission(command.getPermission())) {
-						sender.sendMessage(Utils.msg(main.getConfig().getString("messages.noPermission")));
+						sender.sendMessage(Utils.msg(main.getConfig().getString("messages.noPermission").replace("%permission%", command.getPermission())));
 						return true;
 					}
 					if (command.getLength() > args.length) {

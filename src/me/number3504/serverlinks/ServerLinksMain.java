@@ -79,19 +79,6 @@ public class ServerLinksMain extends JavaPlugin {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("serverlinks"))
 			try {
-				if (args[0].equalsIgnoreCase("permissions") || args[0].equalsIgnoreCase("perms")) {
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							"&8&m &8&m &8&m &8&m&r &bServerLinks Permissions &8&m &8&m &8&m &8&m"));
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&8>&r &3links.set"));
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&8>&r &3links.reset"));
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&8>&r &3links.reload"));
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&8>&r &3links.*"));
-					return true;
-				}
-				if (args[0].equalsIgnoreCase("prefix")) {
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', this.config.getString("prefix")));
-					return true;
-				}
 				if (args[0].equalsIgnoreCase("reset")) {
 					if (!sender.hasPermission("links.reset")) {
 						sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
@@ -303,74 +290,6 @@ public class ServerLinksMain extends JavaPlugin {
 					sender.sendMessage(
 							ChatColor.translateAlternateColorCodes('&', getConfig().getString("links.forum")));
 					return true;
-				}
-				if (args[0].equalsIgnoreCase("list")) {
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', this.config.getString("prefix")));
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							"&3Twitter account: &b" + getConfig().getString("links.twitter")));
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							"&3Facebook account: &b" + getConfig().getString("links.facebook")));
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							"&3Instagram account: &b" + getConfig().getString("links.instagram")));
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							"&3Youtube channel: &b" + getConfig().getString("links.youtube")));
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							"&3Forum website: &b" + getConfig().getString("links.forum")));
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							"&3Discord server: &b" + getConfig().getString("links.discord")));
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							"&3Reports URL: &b" + getConfig().getString("links.reports")));
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							"&3Appeals URL: &b" + getConfig().getString("links.appeals")));
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							"&3Webstore: &b" + getConfig().getString("links.webstore")));
-					return true;
-				}
-				if (args[0].equalsIgnoreCase("reload")) {
-					if (!sender.hasPermission("links.reload")) {
-						sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-								String.valueOf(this.config.getString("prefix")) + this.config.getString("noPermission")
-										.replace("%permission%", "links.reload")));
-						return true;
-					}
-					saveConfig();
-					reloadConfig();
-					this.config.load(this.f);
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							String.valueOf(this.config.getString("prefix")) + this.config.getString("configReloaded")));
-					return true;
-				}
-				if (args[0].equalsIgnoreCase("help")) {
-					if (args.length == 1) {
-						sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-								"&8&m &8&m &8&m &8&m&r &bServerLinks Commands &8&m &8&m &8&m &8&m &r &7(1/2)"));
-						sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-								"&8>&r &3/ServerLinks &8- &bBase plugin command"));
-						sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-								"&8>&r &3/ServerLinks help &8- &bShows you this help message"));
-						sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-								"&8>&r &3/ServerLinks set <link> &8- &bSets the specified link"));
-						sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-								"&8>&r &3/ServerLinks reload &8- &bReloads the plugin's config and messages"));
-						sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-								"&8>&r &3/ServerLinks <link> &8- &bShows you the specified link"));
-						sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-								"&8>&r &3/ServerLinks help 2 &8- &bShows you the second page of help"));
-						return true;
-					}
-					if (args[1].equalsIgnoreCase("2")) {
-						sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-								"&8&m &8&m &8&m &8&m&r &bServerLinks Commands &8&m &8&m &8&m &8&m &r &7(2/2)"));
-						sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-								"&8>&r &3/ServerLinks list &8- &bLists all the links"));
-						sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-								"&8>&r &3/ServerLinks reset <link | all> &8- &bSets the specified link to blank"));
-						sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-								"&8>&r &3/ServerLinks prefix &8- &bShows you the plugin's prefix"));
-						sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-								"&8>&r &3/ServerLinks permissions &8- &bShows you a list of permissions"));
-						return true;
-					}
 				}
 				if (args[0].equalsIgnoreCase("set")) {
 					if (!sender.hasPermission("links.set")) {
