@@ -18,7 +18,6 @@ public class ReloadCommand extends CommandExecutor {
 
 	@Override
 	public void execute(CommandSender sender, String[] args) {
-		main.saveConfig();
 		main.reloadConfig();
 		sender.sendMessage(Utils.msg(
 				main.getConfig().getString("messages.prefix") + main.getConfig().getString("messages.configReloaded")));

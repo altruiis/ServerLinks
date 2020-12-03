@@ -25,8 +25,8 @@ public class SetCommand extends CommandExecutor {
 		String link = s.toString();
 		main.getConfig().set("links." + args[1], link);
 		main.saveConfig();
-		sender.sendMessage(Utils.msg(main.getConfig().getString("messages.prefix") + main.getConfig().getString("messages.linkSet").replace("%link%", args[1]) + link));
 		main.reloadConfig();
+		sender.sendMessage(Utils.msg(main.getConfig().getString("messages.prefix") + main.getConfig().getString("messages.linkSet").replace("%link%", args[1]) + link));
 	}
 
 }
