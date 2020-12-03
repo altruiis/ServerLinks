@@ -12,6 +12,7 @@ public class ResetCommand extends CommandExecutor {
 		setCommand("reset");
 		setLength(2);
 		setPermission("links.reset");
+		setUsage(main.getConfig().getString("messages.resetUsage"));
 	}
 
 	JavaPlugin main = ServerLinksMain.main;

@@ -7,6 +7,7 @@ public abstract class CommandExecutor {
 	private String command;
 	private String permission;
 	private int length;
+	private String usage;
 
 	public abstract void execute(CommandSender sender, String[] args);
 
@@ -32,6 +33,14 @@ public abstract class CommandExecutor {
 
 	public void setLength(int length) {
 		this.length = length;
+	}
+
+	public String getUsage() {
+		return usage;
+	}
+
+	public void setUsage(String usage) {
+		this.usage = usage;
 	}
 
 }

@@ -27,10 +27,14 @@ public class ServerLinksMain extends JavaPlugin {
 		getConfig().addDefault("messages.linkSet", "&aYou set the&7 %link% &ato: ");
 		getConfig().addDefault("messages.noPermission", "&cYou do not have the&4 %permission% &cpermission!");
 		getConfig().addDefault("messages.prefix", "&7[&3ServerLinks&7] &r");
-		getConfig().addDefault("messages.invalidCmd", "&cUnknown command or arguments. Are you sure you are using the correct command?");
+		getConfig().addDefault("messages.invalidCmd",
+				"&cUnknown command or arguments. Are you sure you are using the correct command?");
 		getConfig().addDefault("messages.configReloaded", "&aConfiguration reloaded successfully!");
 		getConfig().addDefault("messages.linkReset", "&aYou reset the&7 %link%&a.");
 		getConfig().addDefault("messages.noLinkSet", "&cNo link has been set. Please contact an administrator.");
+		getConfig().addDefault("messages.setUsage", "&cUsage: /ServerLinks set <link> <message>");
+		getConfig().addDefault("messages.resetUsage", "&cUsage: /ServerLinks reset <link>");
+		getConfig().addDefault("messages.linkUsage", "&cUsage: /ServerLinks link <link>");
 	}
 
 	public void loadConfiguration() {
@@ -46,7 +50,7 @@ public class ServerLinksMain extends JavaPlugin {
 		List<String> vote = new ArrayList<String>();
 		vote.add("PlanetMinecraft");
 		vote.add("MCSL");
-		getConfig().set("vote", vote);
+		getConfig().addDefault("vote", vote);
 		getConfig().options().copyDefaults(true);
 		saveConfig();
 	}

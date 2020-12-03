@@ -21,3 +21,6 @@ messages:
   configReloaded: '&aConfiguration reloaded successfully!'
   linkReset: '&aYou reset the&7 %link%&a.'
   noLinkSet: '&cNo link has been set. Please contact an administrator.'
+  linkUsage: '&cUsage: /ServerLinks link <link>'
+  setUsage: '&cUsage: /ServerLinks set <link> <message>'
+  resetUsage: '&cUsage: /ServerLinks reset <link>'

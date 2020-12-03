@@ -11,6 +11,7 @@ public class LinkCommand extends CommandExecutor {
 	public LinkCommand() {
 		setCommand("link");
 		setLength(2);
+		setUsage(main.getConfig().getString("messages.linkUsage"));
 	}
 
 	JavaPlugin main = ServerLinksMain.main;
@@ -25,6 +26,7 @@ public class LinkCommand extends CommandExecutor {
 		if (main.getConfig().getString("links." + args[1]).equals("")) {
 			sender.sendMessage(Utils.msg(
 					main.getConfig().getString("messages.prefix") + main.getConfig().getString("messages.noLinkSet")));
+			return;
 		}
 		sender.sendMessage(Utils.msg(main.getConfig().getString("links." + args[1])));
 	}

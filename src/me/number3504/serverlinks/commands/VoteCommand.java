@@ -12,15 +12,15 @@ public class VoteCommand extends CommandExecutor {
 		setCommand("vote");
 		setLength(1);
 	}
-	
+
 	JavaPlugin main = ServerLinksMain.main;
-	
+
 	@Override
 	public void execute(CommandSender sender, String[] args) {
 		for (String s : main.getConfig().getStringList("vote")) {
 			sender.sendMessage(Utils.msg(s));
 		}
-		
+
 	}
 
 }

@@ -48,9 +48,11 @@ public class CommandHandler implements org.bukkit.command.CommandExecutor {
 						return true;
 					}
 					if (command.getLength() > args.length) {
-						sender.sendMessage(
-								Utils.msg(main.getConfig().getString("messages.prefix") + main.getConfig().getString("messages.invalidCmd")));
-						return true;
+						if (command.getUsage() != null) {
+							sender.sendMessage(
+									Utils.msg(main.getConfig().getString("messages.prefix") + command.getUsage()));
+							return true;
+						}
 					}
 					command.execute(sender, args);
 					return true;

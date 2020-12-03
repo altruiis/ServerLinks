@@ -12,6 +12,7 @@ public class SetCommand extends CommandExecutor {
 		setCommand("set");
 		setLength(3);
 		setPermission("links.set");
+		setUsage(main.getConfig().getString("messages.setUsage"));
 	}
 
 	JavaPlugin main = ServerLinksMain.main;
