@@ -24,30 +24,13 @@ public class ServerLinksMain extends JavaPlugin {
 		loadConfiguration();
 		loadMessages();
 		System.out.print(ChatColor.translateAlternateColorCodes('&',
-				String.valueOf(this.config.getString("prefix")) + "&aServerLinks successfully enabled"));
+				String.valueOf(getConfig().getString("messages.prefix")) + "&aServerLinks successfully enabled"));
 	}
 
 	public void onDisable() {
 		System.out.print(ChatColor.translateAlternateColorCodes('&',
-				String.valueOf(this.config.getString("prefix")) + "&aServerLinks successfully disabled"));
+				String.valueOf(getConfig().getString("messages.prefix")) + "&aServerLinks successfully disabled"));
 	}
-
-	public void setMessage(String name, String message) {
-		File f = new File(getDataFolder() + File.separator + "messages.yml");
-		YamlConfiguration yamlConfiguration = YamlConfiguration.loadConfiguration(f);
-		if (!yamlConfiguration.isSet(name)) {
-			yamlConfiguration.set(name, message);
-			try {
-				yamlConfiguration.save(f);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-
-	public File f = new File(getDataFolder() + File.separator + "messages.yml");
-
-	public FileConfiguration config = (FileConfiguration) YamlConfiguration.loadConfiguration(this.f);
 
 	public void loadMessages() {
 		getConfig().addDefault("messages.linkSet", "&aYou set the&7 %link% &ato: ");
@@ -188,18 +171,6 @@ public class ServerLinksMain extends JavaPlugin {
 										+ this.config.getString("linkReset").replace("%link%", "twitter")));
 						return true;
 					}
-				}
-				if (args[0].equalsIgnoreCase("info")) {
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', this.config.getString("prefix")));
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							"&7Need assistance? Leave a reply on &3https://www.spigotmc.org/threads/serverlinks.271288/"));
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							"&7Make sure to include relevant server info, like your &3Server version &7and &3console log"));
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							"&7You can also leave a review on &3https://www.spigotmc.org/resources/serverlinks.46807/"));
-					sender.sendMessage(
-							ChatColor.translateAlternateColorCodes('&', "&7To find plugin commands, do &3/sl help"));
-					return true;
 				}
 				if (args[0].equalsIgnoreCase("appeals")) {
 					if (getConfig().getString("links.appeals").equals("")) {
