@@ -9,14 +9,15 @@ links:
   reports: ''
   webstore: ''
 
+vote:
+- 'PlanetMinecraft'
+- 'MCSL'
+
 messages:
   linkSet: '&aYou set the&7 %link% &ato: '
   noPermission: '&cYou do not have the&4 %permission% &cpermission!'
   prefix: '&7[&3ServerLinks&7] &r'
-  invalidCmd: '&cUnknown command. Do /sl help for commands.'
+  invalidCmd: '&cUnknown command or arguments. Are you sure you are using the correct command?'
   configReloaded: '&aConfiguration reloaded successfully!'
   linkReset: '&aYou reset the&7 %link%&a.'
-  specifyMessage: '&cPlease specify a message.'
-  specifyLink: '&cPlease specify a link.'
-  allReset: '&aYou reset every link.'
   noLinkSet: '&cNo link has been set. Please contact an administrator.'

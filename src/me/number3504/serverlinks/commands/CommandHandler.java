@@ -21,6 +21,7 @@ public class CommandHandler implements org.bukkit.command.CommandExecutor {
 		commands.put("set", new SetCommand());
 		commands.put("reset", new ResetCommand());
 		commands.put("link", new LinkCommand());
+		commands.put("vote", new VoteCommand());
 	}
 
 	JavaPlugin main = ServerLinksMain.main;
@@ -48,7 +49,7 @@ public class CommandHandler implements org.bukkit.command.CommandExecutor {
 					}
 					if (command.getLength() > args.length) {
 						sender.sendMessage(
-								Utils.msg("&7Incorrect usage. Are you sure you are using the correct command?"));
+								Utils.msg(main.getConfig().getString("messages.prefix") + main.getConfig().getString("messages.invalidCmd")));
 						return true;
 					}
 					command.execute(sender, args);
