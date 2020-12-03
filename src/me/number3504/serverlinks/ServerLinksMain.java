@@ -59,6 +59,7 @@ public class ServerLinksMain extends JavaPlugin {
 		saveConfig();
 	}
 
+	/*
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("serverlinks"))
 			try {
@@ -479,7 +480,7 @@ public class ServerLinksMain extends JavaPlugin {
 				}
 			} catch (Exception e) {
 				sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-						String.valueOf(this.config.getString("prefix")) + this.config.getString("invalidCommand")));
+						String.valueOf(getConfig().getString("messages.prefix")) + getConfig().getString("messages.invalidCommand")));
 				Bukkit.getLogger().log(Level.SEVERE, "--------");
 				Bukkit.getLogger().log(Level.SEVERE, "There was an error with the /sl command.");
 				Bukkit.getLogger().log(Level.SEVERE, "Try running the command again.");
@@ -489,5 +490,6 @@ public class ServerLinksMain extends JavaPlugin {
 			}
 		return true;
 	}
+	*/
 
 }

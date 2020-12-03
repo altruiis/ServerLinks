@@ -17,6 +17,8 @@ public class CommandHandler implements org.bukkit.command.CommandExecutor {
 		commands.put("info", new InfoCommand());
 		commands.put("help", new HelpCommand());
 		commands.put("reload", new ReloadCommand());
+		commands.put("list", new ListCommand());
+		commands.put("set", new SetCommand());
 	}
 
 	JavaPlugin main = ServerLinksMain.main;
