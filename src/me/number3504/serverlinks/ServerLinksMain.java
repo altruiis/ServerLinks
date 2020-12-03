@@ -59,7 +59,7 @@ public class ServerLinksMain extends JavaPlugin {
 		saveConfig();
 	}
 
-	
+	/*
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("serverlinks"))
 			try {
@@ -165,6 +165,6 @@ public class ServerLinksMain extends JavaPlugin {
 			}
 		return true;
 	}
-	
+	*/
 
 }
