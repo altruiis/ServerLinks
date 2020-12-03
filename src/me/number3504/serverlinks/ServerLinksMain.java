@@ -1,6 +1,5 @@
 package me.number3504.serverlinks;
 
-import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.number3504.serverlinks.commands.CommandHandler;
@@ -14,13 +13,11 @@ public class ServerLinksMain extends JavaPlugin {
 		getCommand("serverlinks").setExecutor(new CommandHandler());
 		loadConfiguration();
 		loadMessages();
-		System.out.print(ChatColor.translateAlternateColorCodes('&',
-				String.valueOf(getConfig().getString("messages.prefix")) + "&aServerLinks successfully enabled"));
+		System.out.print(Utils.msg(getConfig().getString("messages.prefix") + "&aServerLinks successfully enabled"));
 	}
 
 	public void onDisable() {
-		System.out.print(ChatColor.translateAlternateColorCodes('&',
-				String.valueOf(getConfig().getString("messages.prefix")) + "&aServerLinks successfully disabled"));
+		System.out.print(Utils.msg(getConfig().getString("messages.prefix") + "&aServerLinks successfully disabled"));
 	}
 
 	public void loadMessages() {

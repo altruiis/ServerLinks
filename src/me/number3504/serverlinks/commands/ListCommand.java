@@ -13,7 +13,7 @@ public class ListCommand extends CommandExecutor {
 	private String cap(final String line) {
 		return Character.toUpperCase(line.charAt(0)) + line.substring(1);
 	}
-	
+
 	@Override
 	public void execute(CommandSender sender, String[] args) {
 		main.getConfig().getConfigurationSection("links").getKeys(false).forEach(key -> {

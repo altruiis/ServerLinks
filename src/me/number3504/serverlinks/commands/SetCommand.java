@@ -7,13 +7,13 @@ import me.number3504.serverlinks.ServerLinksMain;
 import me.number3504.serverlinks.Utils;
 
 public class SetCommand extends CommandExecutor {
-	
+
 	public SetCommand() {
 		setCommand("set");
 		setLength(3);
 		setPermission("links.set");
 	}
-	
+
 	JavaPlugin main = ServerLinksMain.main;
 
 	@Override
@@ -26,7 +26,8 @@ public class SetCommand extends CommandExecutor {
 		main.getConfig().set("links." + args[1], link);
 		main.saveConfig();
 		main.reloadConfig();
-		sender.sendMessage(Utils.msg(main.getConfig().getString("messages.prefix") + main.getConfig().getString("messages.linkSet").replace("%link%", args[1]) + link));
+		sender.sendMessage(Utils.msg(main.getConfig().getString("messages.prefix")
+				+ main.getConfig().getString("messages.linkSet").replace("%link%", args[1]) + link));
 	}
 
 }

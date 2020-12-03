@@ -42,7 +42,8 @@ public class CommandHandler implements org.bukkit.command.CommandExecutor {
 					final CommandExecutor command = commands.get(name);
 
 					if (command.getPermission() != null && !sender.hasPermission(command.getPermission())) {
-						sender.sendMessage(Utils.msg(main.getConfig().getString("messages.noPermission").replace("%permission%", command.getPermission())));
+						sender.sendMessage(Utils.msg(main.getConfig().getString("messages.noPermission")
+								.replace("%permission%", command.getPermission())));
 						return true;
 					}
 					if (command.getLength() > args.length) {

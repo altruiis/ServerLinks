@@ -7,13 +7,13 @@ import me.number3504.serverlinks.ServerLinksMain;
 import me.number3504.serverlinks.Utils;
 
 public class ResetCommand extends CommandExecutor {
-	
+
 	public ResetCommand() {
 		setCommand("reset");
 		setLength(2);
 		setPermission("links.reset");
 	}
-	
+
 	JavaPlugin main = ServerLinksMain.main;
 
 	@Override
@@ -21,7 +21,8 @@ public class ResetCommand extends CommandExecutor {
 		main.getConfig().set("links." + args[1], "");
 		main.saveConfig();
 		main.reloadConfig();
-		sender.sendMessage(Utils.msg(main.getConfig().getString("messages.prefix") + main.getConfig().getString("messages.linkReset").replace("%link%", args[1])));
+		sender.sendMessage(Utils.msg(main.getConfig().getString("messages.prefix")
+				+ main.getConfig().getString("messages.linkReset").replace("%link%", args[1])));
 	}
 
 }
