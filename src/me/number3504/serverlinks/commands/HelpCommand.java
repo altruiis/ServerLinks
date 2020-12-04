@@ -21,6 +21,7 @@ public class HelpCommand extends CommandExecutor {
 		sender.sendMessage(Utils.msg("&8>&r &3/ServerLinks reload &8- &bReloads the plugin's config"));
 		sender.sendMessage(Utils.msg("&8>&r &3/ServerLinks link <link> &8- &bShows the specified link"));
 		sender.sendMessage(Utils.msg("&8>&r &3/ServerLinks list &8- &bLists all the links"));
+		sender.sendMessage(Utils.msg("&8>&r &3/ServerLinks vote &8- &bLists vote links"));
 		sender.sendMessage(Utils.msg("&8>&r &3/ServerLinks reset <link> &8- &bSets the specified link to blank"));
 	}
 
