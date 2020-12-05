@@ -4,6 +4,7 @@
 .gitattributes
 .project
 .settings
+bin/
 
 # Log file
 *.log
