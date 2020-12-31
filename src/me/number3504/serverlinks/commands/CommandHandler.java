@@ -31,7 +31,7 @@ public class CommandHandler implements org.bukkit.command.CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("serverlinks") || (cmd.getName().equalsIgnoreCase("sl"))) {
 			if (args.length == 0) {
 				sender.sendMessage(Utils.msg("&7Server running&3 ServerLinks"));
-				sender.sendMessage(Utils.msg("&7Plugin version&3 3.0"));
+				sender.sendMessage(Utils.msg("&7Plugin version&3 " + main.getDescription().getVersion()));
 				sender.sendMessage(Utils.msg("&7Plugin made by&3 Number3504"));
 				sender.sendMessage(Utils.msg(
 						"&7If you like my plugin, consider leaving a &3review&7 on the SpigotMC page to help me out!"));
