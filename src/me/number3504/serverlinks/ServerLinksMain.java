@@ -14,6 +14,7 @@ public class ServerLinksMain extends JavaPlugin {
 	public void onEnable() {
 		main = this;
 		getCommand("serverlinks").setExecutor(new CommandHandler());
+		getServer().getPluginManager().registerEvents(new InvClick(), this);
 		loadConfiguration();
 		loadMessages();
 		System.out.print(Utils.msg(getConfig().getString("messages.prefix") + "&aServerLinks successfully enabled"));
@@ -35,6 +36,8 @@ public class ServerLinksMain extends JavaPlugin {
 		getConfig().addDefault("messages.setUsage", "&cUsage: /ServerLinks set <link> <message>");
 		getConfig().addDefault("messages.resetUsage", "&cUsage: /ServerLinks reset <link>");
 		getConfig().addDefault("messages.linkUsage", "&cUsage: /ServerLinks link <link>");
+		getConfig().addDefault("messages.guiName", "&3ServerLinks");
+		getConfig().addDefault("messages.guiItemColor", "&3");
 	}
 
 	public void loadConfiguration() {
