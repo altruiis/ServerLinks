@@ -1,15 +1,17 @@
-package me.number3504.serverlinks;
+package me.number3504.serverlinks.listeners;
 
+import me.number3504.serverlinks.Main;
+import me.number3504.serverlinks.Utils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
-public class InvClick implements Listener {
+public class InventoryClickListener implements Listener {
 
     Main main;
 
-    public InvClick(Main main) {
+    public InventoryClickListener(Main main) {
         this.main = main;
     }
 

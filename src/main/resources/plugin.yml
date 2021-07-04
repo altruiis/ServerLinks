@@ -7,8 +7,9 @@ description: Plugin to set media links such as discord for your users
 
 commands:
   serverlinks:
-    description: ServerLinks main command
-    aliases: sl
+    description: Core plugin command
+    aliases:
+      - sl
 
 permissions:
   links.*:
