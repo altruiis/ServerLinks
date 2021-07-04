@@ -6,28 +6,29 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.number3504.serverlinks.ServerLinksMain;
+import me.number3504.serverlinks.Main;
 import me.number3504.serverlinks.Utils;
+import org.jetbrains.annotations.NotNull;
 
 public class CommandHandler implements org.bukkit.command.CommandExecutor {
 
-	private HashMap<String, CommandExecutor> commands = new HashMap<String, CommandExecutor>();
+	private final HashMap<String, CommandExecutor> commands = new HashMap<>();
 
-	public CommandHandler() {
-		commands.put("info", new InfoCommand());
+	Main main;
+	public CommandHandler(Main main) {
+		this.main = main;
+		commands.put("info", new InfoCommand(main));
 		commands.put("help", new HelpCommand());
-		commands.put("reload", new ReloadCommand());
-		commands.put("list", new ListCommand());
-		commands.put("set", new SetCommand());
-		commands.put("reset", new ResetCommand());
-		commands.put("link", new LinkCommand());
-		commands.put("vote", new VoteCommand());
-		commands.put("gui", new GUICommand());
+		commands.put("reload", new ReloadCommand(main));
+		commands.put("list", new ListCommand(main));
+		commands.put("set", new SetCommand(main));
+		commands.put("reset", new ResetCommand(main));
+		commands.put("link", new LinkCommand(main));
+		commands.put("vote", new VoteCommand(main));
+		commands.put("gui", new GUICommand(main));
 	}
 
-	JavaPlugin main = ServerLinksMain.main;
-
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+	public boolean onCommand(@NotNull CommandSender sender, Command cmd, @NotNull String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("serverlinks") || (cmd.getName().equalsIgnoreCase("sl"))) {
 			if (args.length == 0) {
 				sender.sendMessage(Utils.msg("&7Server running&3 ServerLinks"));
@@ -43,7 +44,7 @@ public class CommandHandler implements org.bukkit.command.CommandExecutor {
 				if (!commands.containsKey(name)) {
 					sender.sendMessage(Utils.msg(main.getConfig().getString("messages.prefix")
 							+ main.getConfig().getString("messages.invalidCmd")));
-					return false;
+					return true;
 				}
 				if (commands.containsKey(name)) {
 					final CommandExecutor command = commands.get(name);
