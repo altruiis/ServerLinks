@@ -31,6 +31,7 @@ public class TabCompleteListener implements TabCompleter {
             commands.add("link");
             commands.add("vote");
             commands.add("list");
+            commands.add("gui");
             if (sender.hasPermission("links.set")) {
                 commands.add("set");
                 commands.add("reset");
