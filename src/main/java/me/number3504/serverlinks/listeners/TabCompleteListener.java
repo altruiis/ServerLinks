@@ -40,11 +40,11 @@ public class TabCompleteListener implements TabCompleter {
             StringUtil.copyPartialMatches(args[0], commands, completions);
         }
         if (args.length == 2) {
-            if (args[0].equalsIgnoreCase("link") || args[0].equalsIgnoreCase("set")) {
+            if (args[0].equalsIgnoreCase("set")) {
                 final List<String> links = new ArrayList<>(main.getConfig().getConfigurationSection("links").getKeys(false));
                 StringUtil.copyPartialMatches(args[1], links, completions);
             }
-            if (args[0].equalsIgnoreCase("reset")) {
+            if (args[0].equalsIgnoreCase("reset") || args[0].equalsIgnoreCase("link")) {
                 final List<String> links = new ArrayList<>();
                 main.getConfig().getConfigurationSection("links").getKeys(false).forEach(s -> {
                     if (!main.getConfig().getString("links." + s).equalsIgnoreCase("")) {
