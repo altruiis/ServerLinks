@@ -1,6 +1,6 @@
 main: me.number3504.serverlinks.Main
 name: ServerLinks
-version: 3.2
+version: 3.3
 api-version: 1.16
 author: Number3504
 description: Plugin to set media links such as discord for your users

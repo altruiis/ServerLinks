@@ -6,7 +6,7 @@
 
     <groupId>groupId</groupId>
     <artifactId>ServerLinks</artifactId>
-    <version>3.2</version>
+    <version>3.3</version>
 
     <properties>
         <java.version>1.8</java.version>
