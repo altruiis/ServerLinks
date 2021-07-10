@@ -4,8 +4,6 @@ import me.number3504.serverlinks.Main;
 import me.number3504.serverlinks.Utils;
 import org.bukkit.command.CommandSender;
 
-import java.util.Objects;
-
 public class ListCommand extends CommandExecutor {
 
     Main main;
