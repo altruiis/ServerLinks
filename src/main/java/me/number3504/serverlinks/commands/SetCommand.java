@@ -21,9 +21,9 @@ public class SetCommand extends CommandExecutor {
     public void execute(CommandSender sender, String[] args) {
         StringBuilder s = new StringBuilder();
         for (int i = 2; i < args.length; i++) {
-            s.append(args[i] + " ");
+            s.append(args[i]).append(" ");
         }
-        String link = s.toString();
+        String link = s.toString().trim();
         main.getConfig().set("links." + args[1], link);
         main.saveConfig();
         main.reloadConfig();
