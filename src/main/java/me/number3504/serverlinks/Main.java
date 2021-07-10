@@ -16,11 +16,11 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new InventoryClickListener(this), this);
         loadConfiguration();
         loadMessages();
-        getLogger().info("[ServerLinks] Plugin successfully enabled");
+        getLogger().info("Plugin successfully enabled");
     }
 
     public void onDisable() {
-        getLogger().info("[ServerLinks] Plugin successfully disabled");
+        getLogger().info("Plugin successfully disabled");
     }
 
     public void loadMessages() {
