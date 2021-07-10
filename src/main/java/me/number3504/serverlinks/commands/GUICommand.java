@@ -25,6 +25,10 @@ public class GUICommand extends CommandExecutor {
     @Override
     public void execute(CommandSender sender, String[] args) {
         if (sender instanceof Player player) {
+            if (main.getConfig().getConfigurationSection("links").getKeys(false).stream().allMatch(s -> main.getConfig().getString("links." + s).equals(""))) {
+                sender.sendMessage(Utils.msg(main.getConfig().getString("messages.prefix") + main.getConfig().getString("messages.linksNotSet")));
+                return;
+            }
             Inventory inv = Bukkit.createInventory(null, 18, Utils.msg(main.getConfig().getString("messages.guiName")));
             int index = -1;
             for (Object s : main.getConfig().getConfigurationSection("links").getKeys(false)) {

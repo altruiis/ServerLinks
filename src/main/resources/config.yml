@@ -24,5 +24,6 @@ messages:
   linkUsage: '&cUsage: /ServerLinks link <link>'
   setUsage: '&cUsage: /ServerLinks set <link> <message>'
   resetUsage: '&cUsage: /ServerLinks reset <link>'
+  linksNotSet: '&cNo links have been set!'
   guiName: '&3ServerLinks'
   guiItemColor: '&3'

@@ -34,6 +34,7 @@ public class Main extends JavaPlugin {
         getConfig().addDefault("messages.setUsage", "&cUsage: /ServerLinks set <link> <message>");
         getConfig().addDefault("messages.resetUsage", "&cUsage: /ServerLinks reset <link>");
         getConfig().addDefault("messages.linkUsage", "&cUsage: /ServerLinks link <link>");
+        getConfig().addDefault("messages.linksNotSet", "&cNo links have been set!");
         getConfig().addDefault("messages.guiName", "&3ServerLinks");
         getConfig().addDefault("messages.guiItemColor", "&3");
     }
