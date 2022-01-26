@@ -13,7 +13,7 @@ public class HelpCommand extends CommandExecutor {
 
 	@Override
 	public void execute(CommandSender sender, String[] args) {
-		sender.sendMessage(Utils.msg("&8&m &8&m &8&m &8&m&r &bServerLinks Commands &8&m &8&m &8&m &8&m "));
+		sender.sendMessage(Utils.msg("&8&m &m &m &m &bServerLinks Commands &8&m &m &m &m "));
 		sender.sendMessage(Utils.msg("&8>&r &3/ServerLinks &8- &bBase plugin command"));
 		sender.sendMessage(Utils.msg("&8>&r &3/ServerLinks info &8- &bMisc. information about the plugin"));
 		sender.sendMessage(Utils.msg("&8>&r &3/ServerLinks help &8- &bShows this help message"));

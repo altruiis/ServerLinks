@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 
 public class LinkCommand extends CommandExecutor {
 
-    Main main;
+    private final Main main;
 
     public LinkCommand(Main main) {
         this.main = main;

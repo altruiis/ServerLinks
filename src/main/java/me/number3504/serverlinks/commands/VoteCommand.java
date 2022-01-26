@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 public class VoteCommand extends CommandExecutor {
 
 
-    Main main;
+    private final Main main;
 
     public VoteCommand(Main main) {
         this.main = main;

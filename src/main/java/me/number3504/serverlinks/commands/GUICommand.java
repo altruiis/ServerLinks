@@ -2,7 +2,6 @@ package me.number3504.serverlinks.commands;
 
 import me.number3504.serverlinks.Main;
 import me.number3504.serverlinks.Utils;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 
 public class GUICommand extends CommandExecutor {
 
-    Main main;
+    private final Main main;
 
     public GUICommand(Main main) {
         this.main = main;
@@ -29,7 +28,7 @@ public class GUICommand extends CommandExecutor {
                 sender.sendMessage(Utils.msg(main.getConfig().getString("messages.prefix") + main.getConfig().getString("messages.linksNotSet")));
                 return;
             }
-            Inventory inv = Bukkit.createInventory(null, 18, Utils.msg(main.getConfig().getString("messages.guiName")));
+            Inventory inv = main.getServer().createInventory(null, 18, Utils.msg(main.getConfig().getString("messages.guiName")));
             int index = -1;
             for (Object s : main.getConfig().getConfigurationSection("links").getKeys(false)) {
                 if (!main.getConfig().getString("links." + s).equals("")) {

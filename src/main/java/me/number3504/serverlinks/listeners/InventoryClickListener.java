@@ -9,7 +9,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 
 public class InventoryClickListener implements Listener {
 
-    Main main;
+    private final Main main;
 
     public InventoryClickListener(Main main) {
         this.main = main;

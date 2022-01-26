@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 
 public class InfoCommand extends CommandExecutor {
 
-    Main main;
+    private final Main main;
 
     public InfoCommand(Main main) {
         this.main = main;

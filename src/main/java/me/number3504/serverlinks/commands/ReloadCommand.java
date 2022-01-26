@@ -6,8 +6,7 @@ import org.bukkit.command.CommandSender;
 
 public class ReloadCommand extends CommandExecutor {
 
-
-    Main main;
+    private final Main main;
 
     public ReloadCommand(Main main) {
         this.main = main;

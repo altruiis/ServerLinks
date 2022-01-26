@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 
 public class ResetCommand extends CommandExecutor {
 
-    Main main;
+    private final Main main;
 
     public ResetCommand(Main main) {
         this.main = main;

@@ -4,7 +4,6 @@ import me.number3504.serverlinks.Main;
 import me.number3504.serverlinks.Utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 
@@ -12,7 +11,7 @@ public class CommandHandler implements org.bukkit.command.CommandExecutor {
 
     private final HashMap<String, CommandExecutor> commands = new HashMap<>();
 
-    Main main;
+    private final Main main;
 
     public CommandHandler(Main main) {
         this.main = main;
@@ -27,7 +26,7 @@ public class CommandHandler implements org.bukkit.command.CommandExecutor {
         commands.put("gui", new GUICommand(main));
     }
 
-    public boolean onCommand(@NotNull CommandSender sender, Command cmd, @NotNull String label, String[] args) {
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("serverlinks")) {
             if (args.length == 0) {
                 sender.sendMessage(Utils.msg("&7Server running&3 ServerLinks"));
@@ -45,24 +44,21 @@ public class CommandHandler implements org.bukkit.command.CommandExecutor {
                             + main.getConfig().getString("messages.invalidCmd")));
                     return true;
                 }
-                if (commands.containsKey(name)) {
-                    final CommandExecutor command = commands.get(name);
-
-                    if (command.getPermission() != null && !sender.hasPermission(command.getPermission())) {
-                        sender.sendMessage(Utils.msg(main.getConfig().getString("messages.prefix") + main.getConfig()
-                                .getString("messages.noPermission").replace("%permission%", command.getPermission())));
-                        return true;
-                    }
-                    if (command.getLength() > args.length) {
-                        if (command.getUsage() != null) {
-                            sender.sendMessage(
-                                    Utils.msg(main.getConfig().getString("messages.prefix") + command.getUsage()));
-                            return true;
-                        }
-                    }
-                    command.execute(sender, args);
+                final CommandExecutor command = commands.get(name);
+                if (command.getPermission() != null && !sender.hasPermission(command.getPermission())) {
+                    sender.sendMessage(Utils.msg(main.getConfig().getString("messages.prefix") + main.getConfig()
+                            .getString("messages.noPermission").replace("%permission%", command.getPermission())));
                     return true;
                 }
+                if (command.getLength() > args.length) {
+                    if (command.getUsage() != null) {
+                        sender.sendMessage(
+                                Utils.msg(main.getConfig().getString("messages.prefix") + command.getUsage()));
+                        return true;
+                    }
+                }
+                command.execute(sender, args);
+                return true;
             }
         }
         return false;

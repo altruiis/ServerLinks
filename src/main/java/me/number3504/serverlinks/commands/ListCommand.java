@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 
 public class ListCommand extends CommandExecutor {
 
-    Main main;
+    private final Main main;
 
     public ListCommand(Main main) {
         this.main = main;
