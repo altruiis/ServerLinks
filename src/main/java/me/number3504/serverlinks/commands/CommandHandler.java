@@ -1,7 +1,6 @@
 package me.number3504.serverlinks.commands;
 
 import me.number3504.serverlinks.Main;
-import me.number3504.serverlinks.Utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
@@ -29,31 +28,25 @@ public class CommandHandler implements org.bukkit.command.CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("serverlinks")) {
             if (args.length == 0) {
-                sender.sendMessage(Utils.msg("&7Server running&3 ServerLinks"));
-                sender.sendMessage(Utils.msg("&7Plugin version&3 " + main.getDescription().getVersion()));
-                sender.sendMessage(Utils.msg("&7Plugin made by&3 Number3504"));
-                sender.sendMessage(Utils.msg(
-                        "&7If you like my plugin, consider leaving a &3review&7 on the SpigotMC page to help me out!"));
-                sender.sendMessage(Utils.msg("&7To find plugin commands, do &3/sl help"));
+                commands.get("help").execute(sender, args);
                 return true;
             }
             if (args[0] != null) {
                 String name = args[0].toLowerCase();
                 if (!commands.containsKey(name)) {
-                    sender.sendMessage(Utils.msg(main.getConfig().getString("messages.prefix")
-                            + main.getConfig().getString("messages.invalidCmd")));
+                    sender.sendRichMessage(main.getConfig().getString("messages.prefix")
+                            + main.getConfig().getString("messages.invalidCmd"));
                     return true;
                 }
                 final CommandExecutor command = commands.get(name);
                 if (command.getPermission() != null && !sender.hasPermission(command.getPermission())) {
-                    sender.sendMessage(Utils.msg(main.getConfig().getString("messages.prefix") + main.getConfig()
-                            .getString("messages.noPermission").replace("%permission%", command.getPermission())));
+                    sender.sendRichMessage(main.getConfig().getString("messages.prefix") + main.getConfig()
+                            .getString("messages.noPermission").replace("%permission%", command.getPermission()));
                     return true;
                 }
                 if (command.getLength() > args.length) {
                     if (command.getUsage() != null) {
-                        sender.sendMessage(
-                                Utils.msg(main.getConfig().getString("messages.prefix") + command.getUsage()));
+                        sender.sendRichMessage(main.getConfig().getString("messages.prefix") + command.getUsage());
                         return true;
                     }
                 }
@@ -61,6 +54,6 @@ public class CommandHandler implements org.bukkit.command.CommandExecutor {
                 return true;
             }
         }
-        return false;
+        return true;
     }
 }
