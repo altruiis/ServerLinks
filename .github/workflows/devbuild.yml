@@ -19,6 +19,9 @@ jobs:
           distribution: temurin
       - name: Validate gradlew
         uses: gradle/wrapper-validation-action@v1
+      - name: Commit hash
+        id: commit
+        uses: pr-mpt/actions-commit-hash@v2
       - name: Execute gradle
         run: chmod +x ./gradlew
       - name: Build
@@ -28,6 +31,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
+          name: ServerLinks-DEV-${{ steps.commit.outputs.short }}
           path: build/libs/*.jar
       #- name: Create devbuild
       #  uses: "marvinpinto/action-automatic-releases@latest"
