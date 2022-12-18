@@ -14,7 +14,8 @@ public class Main extends JavaPlugin {
         loadConfiguration();
     }
 
-    public void onDisable() { }
+    public void onDisable() {
+    }
 
     public void loadConfiguration() {
         getConfig().options().copyDefaults(true);
