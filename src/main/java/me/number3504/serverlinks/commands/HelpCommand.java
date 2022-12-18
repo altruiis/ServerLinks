@@ -2,8 +2,6 @@ package me.number3504.serverlinks.commands;
 
 import org.bukkit.command.CommandSender;
 
-import me.number3504.serverlinks.Utils;
-
 public class HelpCommand extends CommandExecutor {
 
 	public HelpCommand() {
@@ -13,16 +11,15 @@ public class HelpCommand extends CommandExecutor {
 
 	@Override
 	public void execute(CommandSender sender, String[] args) {
-		sender.sendMessage(Utils.msg("&8&m &m &m &m &bServerLinks Commands &8&m &m &m &m "));
-		sender.sendMessage(Utils.msg("&8>&r &3/ServerLinks &8- &bBase plugin command"));
-		sender.sendMessage(Utils.msg("&8>&r &3/ServerLinks info &8- &bMisc. information about the plugin"));
-		sender.sendMessage(Utils.msg("&8>&r &3/ServerLinks help &8- &bShows this help message"));
-		sender.sendMessage(Utils.msg("&8>&r &3/ServerLinks set <link> &8- &bSets the specified link"));
-		sender.sendMessage(Utils.msg("&8>&r &3/ServerLinks reload &8- &bReloads the plugin's config"));
-		sender.sendMessage(Utils.msg("&8>&r &3/ServerLinks link <link> &8- &bShows the specified link"));
-		sender.sendMessage(Utils.msg("&8>&r &3/ServerLinks list &8- &bLists all the links"));
-		sender.sendMessage(Utils.msg("&8>&r &3/ServerLinks vote &8- &bLists vote links"));
-		sender.sendMessage(Utils.msg("&8>&r &3/ServerLinks reset <link> &8- &bSets the specified link to blank"));
+		sender.sendRichMessage("<dark_gray>&m &m &m &m <aqua>ServerLinks Commands <dark_gray>&m &m &m &m ");
+		sender.sendRichMessage("<dark_gray>> <dark_aqua>/sl info <dark_gray>- <aqua>Misc. information about the plugin");
+		sender.sendRichMessage("<dark_gray>> <dark_aqua>/sl help <dark_gray>- <aqua>Shows this help message");
+		sender.sendRichMessage("<dark_gray>> <dark_aqua>/sl set <link> <dark_gray>- <aqua>Sets the specified link");
+		sender.sendRichMessage("<dark_gray>> <dark_aqua>/sl reload <dark_gray>- <aqua>Reloads the plugin's config");
+		sender.sendRichMessage("<dark_gray>> <dark_aqua>/sl link <link> <dark_gray>- <aqua>Shows the specified link");
+		sender.sendRichMessage("<dark_gray>> <dark_aqua>/sl list <dark_gray>- <aqua>Lists all the links");
+		sender.sendRichMessage("<dark_gray>> <dark_aqua>/sl vote <dark_gray>- <aqua>Lists vote links");
+		sender.sendRichMessage("<dark_gray>> <dark_aqua>/sl reset <link> <dark_gray>- <aqua>Sets the specified link to blank");
 	}
 
 }

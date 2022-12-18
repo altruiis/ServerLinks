@@ -1,7 +1,6 @@
 package me.number3504.serverlinks.listeners;
 
 import me.number3504.serverlinks.Main;
-import me.number3504.serverlinks.Utils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -18,9 +17,9 @@ public class InventoryClickListener implements Listener {
     @EventHandler
     public void onInvClick(InventoryClickEvent e) {
         Player player = (Player) e.getWhoClicked();
-        if (e.getView().getTitle().equalsIgnoreCase(Utils.msg(main.getConfig().getString("messages.guiName")))) {
+        if (e.getView().getTitle().equalsIgnoreCase(main.getConfig().getString("messages.guiName"))) {
             e.setCancelled(true);
-            player.sendMessage(e.getCurrentItem().getItemMeta().getLore().get(0));
+            player.sendMessage(e.getCurrentItem().getItemMeta().lore().get(0));
         }
     }
 

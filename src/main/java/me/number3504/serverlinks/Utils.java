@@ -11,8 +11,4 @@ public class Utils {
         return Character.toUpperCase(line.charAt(0)) + line.substring(1);
     }
 
-    public static void send(Audience audience, String message) {
-        audience.sendMessage(mm.deserialize(message));
-    }
-
 }

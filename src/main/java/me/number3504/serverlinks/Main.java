@@ -5,9 +5,6 @@ import me.number3504.serverlinks.listeners.InventoryClickListener;
 import me.number3504.serverlinks.listeners.TabCompleteListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main extends JavaPlugin {
 
     public void onEnable() {

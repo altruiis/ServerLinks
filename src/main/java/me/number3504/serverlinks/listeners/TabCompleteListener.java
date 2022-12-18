@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.util.StringUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,7 +22,7 @@ public class TabCompleteListener implements TabCompleter {
     private final List<String> commands = new ArrayList<>();
 
     @Override
-    public List<String> onTabComplete(CommandSender sender, Command cmd, String label, String[] args) {
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, String[] args) {
         final List<String> completions = new ArrayList<>();
         if (args.length == 1) {
             commands.add("info");
@@ -45,7 +46,7 @@ public class TabCompleteListener implements TabCompleter {
             if (args[0].equalsIgnoreCase("reset") || args[0].equalsIgnoreCase("link")) {
                 final List<String> links = new ArrayList<>();
                 main.getConfig().getConfigurationSection("links").getKeys(false).forEach(s -> {
-                    if (!main.getConfig().getString("links." + s).equalsIgnoreCase("")) {
+                    if (!main.getConfig().getString("links." + s).isEmpty()) {
                         links.add(s);
                     }
                 });

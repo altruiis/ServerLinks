@@ -1,7 +1,6 @@
 package me.number3504.serverlinks.commands;
 
 import me.number3504.serverlinks.Main;
-import me.number3504.serverlinks.Utils;
 import org.bukkit.command.CommandSender;
 
 public class ResetCommand extends CommandExecutor {
@@ -18,11 +17,11 @@ public class ResetCommand extends CommandExecutor {
 
     @Override
     public void execute(CommandSender sender, String[] args) {
-        main.getConfig().set("links." + args[1], "");
+        main.getConfig().set("links." + args[1], null);
         main.saveConfig();
         main.reloadConfig();
-        sender.sendMessage(Utils.msg(main.getConfig().getString("messages.prefix")
-                + main.getConfig().getString("messages.linkReset").replace("%link%", args[1])));
+        sender.sendRichMessage(main.getConfig().getString("messages.prefix")
+                + main.getConfig().getString("messages.linkReset").replace("%link%", args[1]));
     }
 
 }
