@@ -31,7 +31,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: ServerLinks-DEV-${{ steps.commit.outputs.short }}
+          name: ServerLinks-DEV-${{ steps.commit.outputs.short }}.jar
           path: build/libs/*.jar
       #- name: Create devbuild
       #  uses: "marvinpinto/action-automatic-releases@latest"
