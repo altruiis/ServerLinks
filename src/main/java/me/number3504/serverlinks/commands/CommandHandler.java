@@ -15,7 +15,7 @@ public class CommandHandler implements org.bukkit.command.CommandExecutor {
     public CommandHandler(Main main) {
         this.main = main;
         commands.put("info", new InfoCommand(main));
-        commands.put("help", new HelpCommand(main));
+        commands.put("help", new HelpCommand());
         commands.put("reload", new ReloadCommand(main));
         commands.put("list", new ListCommand(main));
         commands.put("set", new SetCommand(main));
