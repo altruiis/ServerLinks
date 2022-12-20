@@ -1,6 +1,5 @@
 package me.number3504.serverlinks.commands;
 
-import me.number3504.serverlinks.Main;
 import org.bukkit.command.CommandSender;
 
 public class HelpCommand extends CommandExecutor {
