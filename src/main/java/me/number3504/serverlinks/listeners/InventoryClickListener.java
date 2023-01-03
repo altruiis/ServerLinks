@@ -18,7 +18,7 @@ public class InventoryClickListener implements Listener {
 
     public InventoryClickListener(Main main) {
         this.main = main;
-        this.key = new NamespacedKey(main, "SL-link");
+        this.key = new NamespacedKey(main, "link");
     }
 
     @EventHandler

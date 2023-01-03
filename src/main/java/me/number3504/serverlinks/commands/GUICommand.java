@@ -26,7 +26,7 @@ public class GUICommand extends CommandExecutor {
         this.main = main;
         setCommand("gui");
         setLength(1);
-        this.key = new NamespacedKey(main, "SL-link");
+        this.key = new NamespacedKey(main, "link");
     }
 
     @Override
