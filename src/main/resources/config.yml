@@ -50,3 +50,9 @@ gui:
   clickMessage: '%link%'
   # Should the GUI close when an item is clicked
   closeOnClick: false
+  # Optional section to make links use custom skulls instead of the material specified above
+  skulls:
+    # Uses the key (not value) from the links section
+    # A base64 string is required for this feature to work - a website such as https://minecraft-heads.com/custom-heads/ will have a large library of strings
+    # Copy the "Value" and paste it
+    discord: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzg3M2MxMmJmZmI1MjUxYTBiODhkNWFlNzVjNzI0N2NiMzlhNzVmZjFhODFjYmU0YzhhMzliMzExZGRlZGEifX19

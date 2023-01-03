@@ -7,7 +7,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
 
+    private static Main instance;
+
     public void onEnable() {
+        instance = this;
         getCommand("serverlinks").setExecutor(new CommandHandler(this));
         getCommand("serverlinks").setTabCompleter(new TabCompleteListener(this));
         getServer().getPluginManager().registerEvents(new InventoryClickListener(this), this);
@@ -20,6 +23,10 @@ public class Main extends JavaPlugin {
     public void loadConfiguration() {
         getConfig().options().copyDefaults(true);
         saveDefaultConfig();
+    }
+
+    public static Main getInstance() {
+        return instance;
     }
 
 }

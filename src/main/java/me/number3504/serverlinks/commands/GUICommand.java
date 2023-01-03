@@ -49,16 +49,20 @@ public class GUICommand extends CommandExecutor {
                 if (!main.getConfig().getString("links." + s).isEmpty()) {
                     ItemStack item = new ItemStack(Material.valueOf(main.getConfig().getString("gui.itemFormat.material")));
                     ItemMeta meta = item.getItemMeta();
+                    meta.getPersistentDataContainer().set(key, PersistentDataType.STRING, s);
                     String name = main.getConfig().getString("gui.itemFormat.name")
                             .replace("%link%", s).replace("%link-capital%", Utils.cap(s));
-                    meta.displayName(mm.deserialize(name));
                     ArrayList<Component> lore = new ArrayList<>();
                     String link = main.getConfig().getString("links." + s);
                     for (String toAdd : main.getConfig().getStringList("gui.itemFormat.lore"))
                         lore.add(mm.deserialize(toAdd.replace("%value%", link).replace("%value-unformatted%", mm.stripTags(link))));
-                    meta.lore(lore);
-                    meta.getPersistentDataContainer().set(key, PersistentDataType.STRING, s);
-                    item.setItemMeta(meta);
+                    if (!main.getConfig().isSet("gui.skulls." + s)) {
+                        meta.displayName(mm.deserialize(name));
+                        meta.lore(lore);
+                        item.setItemMeta(meta);
+                    } else {
+                        item = Utils.customSkull(s, main.getConfig().getString("gui.skulls." + s + ".texture"), name, lore);
+                    }
                     inv.setItem(index, item);
                     index++;
                 }
