@@ -1,17 +1,17 @@
+# All coloring is done with MiniMessage, which uses a tag format
+# Color codes WILL NOT work. e.g. use <aqua> instead of &b
+# https://docs.adventure.kyori.net/minimessage/format.html for more info
 links:
   appeals: ''
-  twitter: ''
-  facebook: ''
   discord: ''
   youtube: ''
   forum: ''
   instagram: ''
-  reports: ''
-  webstore: ''
+  store: ''
 
 vote:
-- 'PlanetMinecraft'
-- 'MCSL'
+  - '<red>PlanetMinecraft'
+  - '<bold>MCSL'
 
 messages:
   linkSet: '<green>You set the<gray> %link% <green>to: '
@@ -21,9 +21,32 @@ messages:
   configReloaded: '<green>Configuration reloaded successfully!'
   linkReset: '<green>You reset the<gray> %link%<green>.'
   noLinkSet: '<red>No link has been set. Please contact an administrator.'
+  sectionNotFound: '<red>There was an error finding the config section containing links.'
   linkUsage: '<red>Usage: /sl link <link>'
   setUsage: '<red>Usage: /sl set <link> <message>'
   resetUsage: '<red>Usage: /sl reset <link>'
   linksNotSet: '<red>No links have been set!'
-  guiName: '<dark_aqua>ServerLinks'
-  guiItemColor: '<dark_aqua>'
+
+gui:
+  title: '<dark_aqua>ServerLinks'
+  # If this number is lower than the number of links, it will not work correctly
+  # Can only be 9, 18, 27, 36, 45, or 54
+  size: 18
+  itemFormat:
+    material: 'PAPER'
+    # %link% returns the type of link, e.g. discord.
+    # Can also be %link-capital% to capitalize the first letter
+    name: '<!i><dark_aqua><bold>%link%'
+    # %value% is whatever the link is set to above in the config
+    # Can also be %value-unformatted% to strip any colors, so you can format it however you like in the GUI
+    # These are prefixed with <!i> because minecraft italicizes item lore by default
+    lore:
+      - '<!i><aqua>%value%'
+  # By default, sends the value of the link as it is specified in the links section
+  # If left blank, no message will be sent when an item is clicked
+  # Also supports MiniMessage tags for formatting
+  # %link% - The exact link value from the links section
+  # %link-unformatted% - The value but without any coloring/formatting
+  clickMessage: '%link%'
+  # Should the GUI close when an item is clicked
+  closeOnClick: false
