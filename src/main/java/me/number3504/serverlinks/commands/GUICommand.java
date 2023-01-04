@@ -61,7 +61,7 @@ public class GUICommand extends CommandExecutor {
                         meta.lore(lore);
                         item.setItemMeta(meta);
                     } else {
-                        item = Utils.customSkull(s, main.getConfig().getString("gui.skulls." + s + ".texture"), name, lore);
+                        item = Utils.customSkull(s, main.getConfig().getString("gui.skulls." + s), name, lore);
                     }
                     inv.setItem(index, item);
                     index++;
