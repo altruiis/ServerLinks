@@ -34,12 +34,14 @@ gui:
   size: 18
   itemFormat:
     material: 'PAPER'
-    # %link% returns the type of link, e.g. discord.
-    # Can also be %link-capital% to capitalize the first letter
-    name: '<!i><dark_aqua><bold>%link%'
-    # %value% is whatever the link is set to above in the config
-    # Can also be %value-unformatted% to strip any colors, so you can format it however you like in the GUI
+    # Returns the type of link, e.g. discord
     # These are prefixed with <!i> because minecraft italicizes item lore by default
+    # %link% - Unformatted link
+    # %link-capital% - Capitalize the first letter
+    name: '<!i><dark_aqua><bold>%link%'
+    # The value of the link to display
+    # %value% - Exact value as it is specified above, with color, format, etc. tags
+    # %value-unformatted% - Value stripped of all tags
     lore:
       - '<!i><aqua>%value%'
   # By default, sends the value of the link as it is specified in the links section
@@ -51,8 +53,9 @@ gui:
   # Should the GUI close when an item is clicked
   closeOnClick: false
   # Optional section to make links use custom skulls instead of the material specified above
+  # Discord is included as an example, but you can freely remove it to use the default item material
   skulls:
     # Uses the key (not value) from the links section
     # A base64 string is required for this feature to work - a website such as https://minecraft-heads.com/custom-heads/ will have a large library of strings
     # Copy the "Value" and paste it
-    discord: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzg3M2MxMmJmZmI1MjUxYTBiODhkNWFlNzVjNzI0N2NiMzlhNzVmZjFhODFjYmU0YzhhMzliMzExZGRlZGEifX19
+    discord: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzg3M2MxMmJmZmI1MjUxYTBiODhkNWFlNzVjNzI0N2NiMzlhNzVmZjFhODFjYmU0YzhhMzliMzExZGRlZGEifX19'
