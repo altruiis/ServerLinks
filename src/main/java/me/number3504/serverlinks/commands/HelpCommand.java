@@ -17,6 +17,7 @@ public class HelpCommand extends CommandExecutor {
         sender.sendRichMessage("<dark_gray>> <dark_aqua>/sl set <link> <dark_gray>- <aqua>Sets the specified link");
         sender.sendRichMessage("<dark_gray>> <dark_aqua>/sl reload <dark_gray>- <aqua>Reloads the plugin's config");
         sender.sendRichMessage("<dark_gray>> <dark_aqua>/sl link <link> <dark_gray>- <aqua>Shows the specified link");
+        sender.sendRichMessage("<dark_gray>> <dark_aqua>/sl gui <dark_gray>- <aqua>List all links in a gui menu");
         sender.sendRichMessage("<dark_gray>> <dark_aqua>/sl list <dark_gray>- <aqua>Lists all the links");
         sender.sendRichMessage("<dark_gray>> <dark_aqua>/sl vote <dark_gray>- <aqua>Lists vote links");
         sender.sendRichMessage("<dark_gray>> <dark_aqua>/sl reset <link> <dark_gray>- <aqua>Sets the specified link to blank");
