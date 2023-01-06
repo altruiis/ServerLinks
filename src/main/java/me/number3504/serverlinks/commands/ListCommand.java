@@ -24,7 +24,11 @@ public class ListCommand extends CommandExecutor {
         }
         section.getKeys(false).forEach(key -> {
             if (!main.getConfig().getString("links." + key).isEmpty()) {
-                sender.sendRichMessage("<dark_aqua>" + Utils.cap(key) + "<gray>:<reset> " + main.getConfig().getString("links." + key));
+                String message = main.getConfig().getString("messages.listFormat")
+                        .replace("%link%", key)
+                        .replace("%link-capital%", Utils.cap(key))
+                        .replace("%value%", main.getConfig().getString("links." + key));
+                sender.sendRichMessage(message);
             }
         });
     }

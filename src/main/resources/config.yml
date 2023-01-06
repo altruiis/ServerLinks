@@ -26,6 +26,7 @@ messages:
   setUsage: '<red>Usage: /sl set <link> <message>'
   resetUsage: '<red>Usage: /sl reset <link>'
   linksNotSet: '<red>No links have been set!'
+  listFormat: '<dark_aqua>%link-capital%<gray>: %value%'
 
 gui:
   title: '<dark_aqua>ServerLinks'
