@@ -16,11 +16,11 @@ public class InfoCommand extends CommandExecutor {
     // TODO: Modrinth link
     public void execute(CommandSender sender, String[] args) {
         sender.sendRichMessage(main.getConfig().getString("messages.prefix"));
-        sender.sendRichMessage("<gray>Need assistance? Make an issue on " +
-                "<dark_aqua><click:open_url:https://github.com/Altruiis/ServerLinks/issues/><hover:show_text:Click to visit>the github");
+        sender.sendRichMessage("<gray>Need assistance? Make an issue on<dark_aqua> " +
+                "<hover:show_text:'<aqua>Click to go there now'><click:open_url:'https://github.com/Altruiis/ServerLinks/'><u>GitHub");
         sender.sendRichMessage("<gray>Make sure to include relevant server info, like your <dark_aqua>server version <gray>and <dark_aqua>error log");
-        sender.sendRichMessage("<gray>You can view the plugin on <dark_aqua>TODO");
-        sender.sendRichMessage("<gray>To find plugin commands, do <dark_aqua>/sl help");
+        sender.sendRichMessage("<gray>You can view the plugin on <dark_aqua>");
+        sender.sendRichMessage("<gray>To find plugin commands, do <hover:show_text:'<aqua><u>Click!'><click:run_command:'/sl help'><dark_aqua><u>/sl help");
     }
 
 }
