@@ -4,6 +4,8 @@ version: @version@
 api-version: 1.19
 author: Altruiis
 description: Plugin to set media links such as discord for your users
+softdepend:
+  - PlaceholderAPI
 
 commands:
   serverlinks:

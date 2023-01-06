@@ -15,6 +15,9 @@ public class Main extends JavaPlugin {
         getCommand("serverlinks").setTabCompleter(new TabCompleteListener(this));
         getServer().getPluginManager().registerEvents(new InventoryClickListener(this), this);
         loadConfiguration();
+        if (getServer().getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            new Placeholders(this).register();
+        }
     }
 
     public void onDisable() {
